@@ -1,4 +1,160 @@
-body { font-family: Arial, sans-serif; margin: 0; }
-header { background: #1a3d6d; color: white; padding: 20px; }
-nav a { color: white; margin-right: 16px; text-decoration: none; }
-section { padding: 24px; max-width: 800px; }
+/* Theme colors (Cupertino crimson + gold, same as tinoclubs.com).
+   Change a color here and it updates everywhere. */
+:root {
+  --crimson: #992b34;
+  --crimson-dark: #5a0d08;
+  --gold: #c8a767;
+  --gold-dark: #a1772e;
+  --bg: #f7f4ef;
+  --card: #ffffff;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--crimson); }
+
+/* ----- Banner ----- */
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 24px;
+  background: linear-gradient(90deg, var(--crimson) 30%, var(--crimson-dark) 90%);
+  color: white;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  background: white;
+}
+
+.banner h1 { margin: 0; font-size: 2.2rem; }
+.tagline { margin: 0; color: var(--gold); }
+
+/* ----- Category tabs ----- */
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  background: white;
+  border-bottom: 3px solid var(--gold);
+  overflow-x: auto;           /* tabs scroll sideways on small phones */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tabs a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--crimson);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tabs a:hover { background: #f3e9e9; }
+
+.tabs a.active {
+  background: var(--crimson);
+  color: white;
+}
+
+/* ----- Page content ----- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h2 {
+  color: var(--crimson);
+  border-left: 6px solid var(--gold);
+  padding-left: 12px;
+}
+
+h3 { color: var(--crimson-dark); margin-top: 0; }
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Gray box that stands in for a photo until we have real images */
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: #e6e1d8;
+  border: 2px dashed var(--gold-dark);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.photo-placeholder.wide {
+  aspect-ratio: 16 / 7;
+  margin-bottom: 20px;
+}
+
+/* ----- Officers ----- */
+.officer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.officer {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.officer h3 { margin: 12px 0 0; }
+.officer .role { margin: 0; color: var(--gold-dark); font-weight: 600; }
+.officer .bio { color: var(--muted); font-size: 0.9rem; }
+
+/* ----- Footer ----- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background: var(--crimson-dark);
+}
+
+/* ----- Phones ----- */
+@media (max-width: 600px) {
+  .banner { padding: 20px 16px; }
+  .logo { width: 64px; height: 64px; }
+  .banner h1 { font-size: 1.6rem; }
+  .tabs { padding: 10px 16px; }
+  main { padding: 16px; }
+  .two-col { grid-template-columns: 1fr; }
+}

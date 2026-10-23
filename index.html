@@ -4,31 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tino Science</title>
+  <link rel="icon" href="images/logo.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Tino Science</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#competitions">Competitions</a>
-      <a href="#officers">Officers</a>
-    </nav>
+
+  <!-- Top banner: logo + club name -->
+  <header class="banner">
+    <img src="images/logo.jpg" alt="Tino Science Club logo" class="logo">
+    <div>
+      <h1>Tino Science</h1>
+      <p class="tagline">Cupertino High School's science club</p>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Write one sentence about the club here.</p>
-  </section>
+  <!-- Category tabs. Each data-tab matches a section id below. -->
+  <nav class="tabs">
+    <a href="#home" data-tab="home">Home</a>
+    <a href="#officers" data-tab="officers">Officers</a>
+    <a href="#scioly" data-tab="scioly">Science Olympiad</a>
+    <a href="#scibowl" data-tab="scibowl">Science Bowl</a>
+  </nav>
 
-  <section id="competitions">
-    <h2>Competitions</h2>
-    <p>Science Bowl, Science Olympiad, USABO, USNCO, USAPhO, Synopsys.</p>
-  </section>
+  <main>
 
-  <section id="officers">
-    <h2>Officers</h2>
-    <p>Coming soon.</p>
-  </section>
+    <!-- ===== HOME ===== -->
+    <section id="home" class="tab-panel">
+      <div class="card">
+        <h2>About Us</h2>
+        <p>
+          Tino Science is a club dedicated to providing opportunities for members to further
+          their interests in science and STEM; various fun/hands-on activities and guest speaker
+          events will take place throughout the year. The club also prepares members for the
+          national STEM Olympiads, including USABO, USNCO, USAPhO, and Science Olympiad, and
+          members also compete in Science Bowl and the Synopsys Science Fair.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>When We Meet</h3>
+          <p>Tuesdays at lunch<br>Room 7103</p>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:tinoscienceclub@gmail.com">tinoscienceclub@gmail.com</a></p>
+          <!-- TODO (Kai): add the Instagram link here -->
+        </div>
+      </div>
+
+      <div class="photo-placeholder wide">Insert image here</div>
+    </section>
+
+    <!-- ===== OFFICERS ===== -->
+    <!-- To add an officer: copy one <div class="officer"> block and change the text. -->
+    <section id="officers" class="tab-panel">
+      <h2>Officer Team</h2>
+      <div class="officer-grid">
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Ziya Ahmad</h3>
+          <p class="role">President</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Netra Khot</h3>
+          <p class="role">President</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Pranav Burra</h3>
+          <p class="role">Vice President</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Ayana Kadkol</h3>
+          <p class="role">Secretary</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Walker Deng</h3>
+          <p class="role">Treasurer</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Claire Li</h3>
+          <p class="role">Public Relations</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Rosa Lee</h3>
+          <p class="role">Science Bowl Captain</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Jayden Yip</h3>
+          <p class="role">Science Olympiad Captain</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Prisha Jain</h3>
+          <p class="role">Science Olympiad Captain</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Pari Gupta</h3>
+          <p class="role">Research Competition Officer</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Rohan Vellamcheti</h3>
+          <p class="role">Research Competition Officer</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+        <div class="officer">
+          <div class="photo-placeholder">Insert image here</div>
+          <h3>Daniel Stavis</h3>
+          <p class="role">Advisor</p>
+          <p class="bio">Bio coming soon.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SCIENCE OLYMPIAD ===== -->
+    <section id="scioly" class="tab-panel">
+      <h2>Science Olympiad</h2>
+      <div class="photo-placeholder wide">Insert team photo here</div>
+
+      <div class="card">
+        <h3>About the Team</h3>
+        <p>Description coming soon.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>How to Join</h3>
+          <p>Coming soon.</p>
+        </div>
+        <div class="card">
+          <h3>Deadlines</h3>
+          <p>Coming soon.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Captains</h3>
+        <p>Jayden Yip, Prisha Jain</p>
+      </div>
+    </section>
+
+    <!-- ===== SCIENCE BOWL ===== -->
+    <section id="scibowl" class="tab-panel">
+      <h2>Science Bowl</h2>
+      <div class="photo-placeholder wide">Insert team photo here</div>
+
+      <div class="card">
+        <h3>About the Team</h3>
+        <p>Description coming soon.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>How to Join</h3>
+          <p>Coming soon.</p>
+        </div>
+        <div class="card">
+          <h3>Deadlines</h3>
+          <p>Coming soon.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Captain</h3>
+        <p>Rosa Lee</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Tino Science · Cupertino High School</p>
+  </footer>
+
+  <script src="tabs.js"></script>
 </body>
 </html>
