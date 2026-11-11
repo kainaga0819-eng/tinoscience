@@ -1,3 +1,18 @@
+
+
+<!-- 
+ 
+
+<!doctype html> : every HTML page start with this 
+<head> : behind teh scenes info and does show on the page
+<html lang="en"> : just means the language english  
+
+<body> : everything visitors actually see 
+
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +33,25 @@
   <!-- TOP BAR (same on every page) -->
   <div class="topbar">
     <div class="container">
-      <span>Cupertino High School</span>
+      <a class="topbar-school" href="https://chs.fuhsd.org/" target="_blank" rel="noopener">Cupertino High School<span class="topbar-address"> - 10100 Finch Ave, Cupertino, CA 95014</span></a>
       <div class="topbar-links">
-        <a href="index.html#contact">Contact</a>
+        <button class="topbar-search" type="button" aria-expanded="false" aria-controls="site-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          Search
+        </button>
+        <a href="index.html#contact">Contact us</a>
         <a class="topbar-cta" href="index.html#join">Join</a>
       </div>
+    </div>
+  </div>
+
+  <!-- SEARCH PANEL: opens under the top bar when "Search" is clicked. script.js fills in the results. -->
+  <div class="search-panel" id="site-search" hidden>
+    <div class="container">
+      <label class="search-label" for="search-input">Search this site</label>
+      <input id="search-input" type="search" placeholder="Try &quot;tryouts&quot;, &quot;Room&quot; or &quot;Astronomy&quot;" autocomplete="off">
+      <p class="search-status" aria-live="polite"></p>
+      <ul class="search-results"></ul>
     </div>
   </div>
 
@@ -51,7 +80,7 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Cupertino High School</span>
-            <h1>Compete in science. Learn past the textbook.</h1>
+            <h1>Compete in science. <br> Learn past the textbook.</h1>
             <p class="lead">Tino Science is home to two competition teams: Science Olympiad, where partners master build, lab and written events, and Science Bowl, a fast-paced buzzer competition.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#join">How to join</a>
@@ -67,20 +96,23 @@
             </div>
           </div>
 
-          <!-- 3D ATOM. The canvas is added by atom.js. The SVG shows if 3D can't load. -->
+          <!-- ATOM PICTURE. A flat drawing (SVG): three rings, a centre, and three
+               yellow electrons. Each <animateMotion> slides one electron around its
+               ring. "dur" is how many seconds one lap takes. -->
           <div class="hero-visual" aria-hidden="true">
-            <svg class="atom-fallback" viewBox="0 0 200 200">
+            <svg class="atom-flat" viewBox="0 0 200 200">
               <g fill="none" stroke="#DFE6F5" stroke-width="1.5" opacity="0.8">
                 <ellipse cx="100" cy="100" rx="80" ry="30"/>
                 <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(60 100 100)"/>
                 <ellipse cx="100" cy="100" rx="80" ry="30" transform="rotate(-60 100 100)"/>
               </g>
               <circle cx="100" cy="100" r="14" fill="#C9A227"/>
-              <circle cx="180" cy="100" r="5" fill="#C9A227"/>
-              <circle cx="140" cy="169" r="5" fill="#C9A227"/>
-              <circle cx="60" cy="31" r="5" fill="#C9A227"/>
+              <g fill="#C9A227">
+                <circle r="5"><animateMotion dur="7s" repeatCount="indefinite" path="M180,100 A80,30 0 1,1 20,100 A80,30 0 1,1 180,100"/></circle>
+                <g transform="rotate(60 100 100)"><circle r="5"><animateMotion dur="9s" begin="-3s" repeatCount="indefinite" path="M180,100 A80,30 0 1,1 20,100 A80,30 0 1,1 180,100"/></circle></g>
+                <g transform="rotate(-60 100 100)"><circle r="5"><animateMotion dur="11s" begin="-7s" repeatCount="indefinite" path="M180,100 A80,30 0 1,1 20,100 A80,30 0 1,1 180,100"/></circle></g>
+              </g>
             </svg>
-            <span class="hint">Drag to spin</span>
           </div>
         </div>
       </div>
@@ -91,7 +123,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">About the club</span>
-          <h2>The science club at Cupertino High School</h2>
+          <h2>The science club at CHS</h2>
           <p>Tino Science is a student-run club for anyone at Tino who wants to go further in science. The club runs two competition teams, Science Olympiad and Science Bowl. Officers organize tryouts, coach the teams and keep everyone on track for tournaments.</p>
         </div>
         <div class="grid-3 reveal">
@@ -124,8 +156,7 @@
 
         <div class="feature-row">
           <div class="feature-text reveal">
-            <span class="eyebrow">Science Olympiad</span>
-            <h3><a class="title-link" href="scioly.html">23 events. Pick your three.</a></h3>
+            <h3><a class="title-link" href="scioly.html">Science Olypmiad</a></h3>
             <p>Partners prepare for written tests, lab practicals and engineering builds across biology, chemistry, physics, astronomy, Earth science and engineering. Two teams of 15 compete at invitationals and regionals, with a path to state and nationals.</p>
           </div>
           <!-- Official Science Olympiad logo (from soinc.org/logo_samples). -->
@@ -136,15 +167,12 @@
 
         <div class="feature-row flip">
           <div class="feature-text reveal">
-            <span class="eyebrow">Science Bowl</span>
-            <h3><a class="title-link" href="scibowl.html">Fast, loud and buzzer-first.</a></h3>
+            <h3><a class="title-link" href="scibowl.html">Science Bowl</a></h3>
             <p>Five-person teams face off on toss-up and bonus questions in math, physics, chemistry, biology and Earth &amp; space science. The team plays six or more tournaments a year, in person and online.</p>
           </div>
-          <!-- Official National Science Bowl logo (from science.osti.gov/wdts/nsb/About/Logos).
-               Its rules: do not alter it, and keep the credit sentence below with it. -->
+          <!-- Official National Science Bowl logo (from science.osti.gov/wdts/nsb/About/Logos). Do not alter it. -->
           <figure class="feature-media logo-panel logo-panel-white reveal">
             <img src="images/scibowl-logo.png" alt="National Science Bowl logo: a competition like no other" loading="lazy">
-            <figcaption>The U.S. Department of Energy Office of Science manages the National Science Bowl®, and sponsors the NSB finals competition.</figcaption>
           </figure>
         </div>
       </div>

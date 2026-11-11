@@ -116,7 +116,7 @@ li { margin-bottom: 0.4em; }
   align-items: center;
   gap: 10px;
 }
-.brand span { color: var(--accent); }
+.brand span { color: var(--accent); font-weight: 1200; }
 .brand img { width: 30px; height: 30px; border-radius: 50%; }
 
 .nav-links {
@@ -675,13 +675,11 @@ h1 { font-weight: 800; }
 .nav { background: #fff; border-bottom: 1px solid var(--border); }
 .nav .container { min-height: 68px; }
 .brand { color: var(--navy); font-weight: 400; font-size: 1.45rem; }
-.brand span { color: var(--navy); font-weight: 800; }
 .nav-links { gap: 8px; }
 .nav-links a { color: var(--heading); border-radius: 0; padding: 8px 10px; border-bottom: 3px solid transparent; }
 .nav-links a:hover { color: var(--heading); background: none; border-bottom-color: var(--border); }
 .nav-links a[aria-current] { color: var(--heading); font-weight: 700; border-bottom-color: var(--accent); }
 .nav-toggle { border-color: var(--border); color: var(--navy); }
-.footer .brand, .footer .brand span { color: #fff; }
 
 /* Squared buttons and tags */
 .btn { border-radius: 4px; padding: 12px 22px; }
@@ -828,3 +826,54 @@ h1 { font-weight: 800; }
 .logo-panel-white { background: #fff; flex-direction: column; gap: 20px; }
 .logo-panel-white img { max-width: 380px; }
 .logo-panel figcaption { font-size: 0.75rem; line-height: 1.5; color: var(--text); text-align: center; max-width: 420px; }
+
+/* --------------------------------------------------------------------------
+   Top bar: school link, search, contact, join
+   -------------------------------------------------------------------------- */
+html { background: var(--navy); }          /* navy shows if the page is pulled past its top or bottom */
+body { background: #fff; }
+.topbar-school { display: flex; align-items: center; color: #fff; text-decoration: none; font-weight: 600; white-space: pre; }
+.topbar-school:hover { text-decoration: underline; }
+.topbar-address { font-weight: 400; }
+.topbar-search {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 16px; border: 0; background: none; color: #fff;
+  font: inherit; font-weight: 500; cursor: pointer;
+}
+.topbar-search:hover, .topbar-search[aria-expanded="true"] { background: rgba(255, 255, 255, 0.12); }
+
+.search-panel { background: var(--navy-2); color: #fff; padding: 20px 0 24px; }
+.search-label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.search-panel input {
+  width: 100%; padding: 12px 14px; font: inherit; font-size: 1rem;
+  border: 2px solid transparent; border-radius: 4px; background: #fff; color: var(--heading);
+}
+.search-panel input:focus { outline: none; border-color: var(--accent); }
+.search-status { margin: 10px 0 0; font-size: 0.85rem; color: var(--on-navy-muted); }
+.search-status:empty { display: none; }
+.search-results { list-style: none; margin: 12px 0 0; padding: 0; max-height: 50vh; overflow-y: auto; }
+.search-results li { margin: 0; }
+.search-results a {
+  display: block; padding: 10px 12px; border-radius: 4px;
+  color: #fff; text-decoration: none; border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.search-results a:hover, .search-results a:focus-visible { background: rgba(255, 255, 255, 0.1); }
+.search-page { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.search-snippet { font-size: 0.95rem; }
+.search-results mark { background: var(--accent); color: var(--navy); padding: 0 2px; border-radius: 2px; }
+@media (max-width: 900px) { .topbar-address { display: none; } }
+@media (max-width: 520px) {
+  .topbar-search, .topbar-links a { padding: 0 10px; }
+}
+.topbar .topbar-address { display: inline; }
+@media (max-width: 900px) { .topbar .topbar-address { display: none; } }
+
+/* Logo panels: plain white, no box around them */
+.logo-panel { background: #fff; border: 0; }
+
+/* Flat atom picture in the hero */
+.hero-visual .atom-flat { display: block; width: 100%; height: 100%; }
+
+/* Site name: "Science" is the same colour as "Tino" (navy in the menu bar, white in the footer) */
+.brand span { color: inherit; font-weight: 800; }
+.footer .brand { color: #fff; }

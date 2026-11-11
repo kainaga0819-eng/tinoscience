@@ -1,5 +1,6 @@
 // Tino Science — 3D atom for the homepage hero.
-// Self-contained Three.js snippet. Three.js (~650 KB) is fetched from a CDN
+// Self-contained Three.js snippet, loaded by script.js as an ordinary script
+// so it also works when index.html is opened by double-clicking. Three.js (~650 KB) is fetched from a CDN
 // only when this file runs, which script.js limits to larger screens.
 //
 // To use a .glb model instead (for example one made with Kimi 3D), see README.md.
@@ -10,7 +11,7 @@ const GOLD = 0xc9a227;       // matches --accent in style.css
 const NAVY_LIGHT = 0x3a4f80; // lighter navy so the nucleus reads against the dark hero
 const RING = 0xdfe6f5;
 
-export async function mountAtom(container) {
+window.mountAtom = async function mountAtom(container) {
   const THREE = await import(THREE_URL);
 
   // --- Renderer, scene, camera -------------------------------------------
@@ -156,4 +157,4 @@ export async function mountAtom(container) {
     if (document.hidden || !inView) stop(); else start();
   });
   start();
-}
+};

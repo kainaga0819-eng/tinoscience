@@ -18,11 +18,25 @@
   <!-- TOP BAR (same on every page) -->
   <div class="topbar">
     <div class="container">
-      <span>Cupertino High School</span>
+      <a class="topbar-school" href="https://chs.fuhsd.org/" target="_blank" rel="noopener">Cupertino High School<span class="topbar-address"> - 10100 Finch Ave, Cupertino, CA 95014</span></a>
       <div class="topbar-links">
-        <a href="index.html#contact">Contact</a>
+        <button class="topbar-search" type="button" aria-expanded="false" aria-controls="site-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          Search
+        </button>
+        <a href="index.html#contact">Contact us</a>
         <a class="topbar-cta" href="index.html#join">Join</a>
       </div>
+    </div>
+  </div>
+
+  <!-- SEARCH PANEL: opens under the top bar when "Search" is clicked. script.js fills in the results. -->
+  <div class="search-panel" id="site-search" hidden>
+    <div class="container">
+      <label class="search-label" for="search-input">Search this site</label>
+      <input id="search-input" type="search" placeholder="Try &quot;tryouts&quot;, &quot;Room&quot; or &quot;Astronomy&quot;" autocomplete="off">
+      <p class="search-status" aria-live="polite"></p>
+      <ul class="search-results"></ul>
     </div>
   </div>
 
