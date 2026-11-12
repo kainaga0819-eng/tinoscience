@@ -67,35 +67,135 @@
       </div>
     </section>
 
-    <!-- OFFICER TEAM. To add an officer, copy one <div class="card officer"> block.
+    <!-- OFFICER TEAM. Presidents sit on top in bigger cards; every other role has its own group.
+         To add an officer, copy one <div class="card officer"> block into the right group.
+         To add a new role, copy a whole <div class="officer-group"> block and change its title.
          To use a photo, replace the initials inside .avatar with
-         <img src="images/officers/name.jpg" alt=""> -->
+         <img src="images/officers/name.jpg" alt="">
+         Field of science: replace "TBD" inside <p class="bio"> with their field, e.g. Astronomy. -->
     <section class="section" id="officers">
       <div class="container">
-        <div class="officer-grid reveal">
-          <div class="card officer"><div class="avatar">ZA</div><h3>Ziya Ahmad</h3><p class="role">President</p></div>
-          <div class="card officer"><div class="avatar">NK</div><h3>Netra Khot</h3><p class="role">President</p></div>
-          <div class="card officer"><div class="avatar">PB</div><h3>Pranav Burra</h3><p class="role">Vice President</p></div>
-          <div class="card officer"><div class="avatar">AK</div><h3>Ayana Kadkol</h3><p class="role">Secretary</p></div>
-          <div class="card officer"><div class="avatar">WD</div><h3>Walker Deng</h3><p class="role">Treasurer</p></div>
-          <div class="card officer"><div class="avatar">CL</div><h3>Claire Li</h3><p class="role">Public Relations</p></div>
-          <div class="card officer"><div class="avatar">RL</div><h3>Rosa Lee</h3><p class="role">Science Bowl Captain</p></div>
-          <div class="card officer"><div class="avatar">JY</div><h3>Jayden Yip</h3><p class="role">Science Olympiad Captain</p></div>
-          <div class="card officer"><div class="avatar">PJ</div><h3>Prisha Jain</h3><p class="role">Science Olympiad Captain</p></div>
-          <div class="card officer"><div class="avatar">PG</div><h3>Pari Gupta</h3><p class="role">Research Competition Officer</p></div>
-          <div class="card officer"><div class="avatar">RV</div><h3>Rohan Vellamcheti</h3><p class="role">Research Competition Officer</p></div>
-          <div class="card officer"><div class="avatar">DS</div><h3>Daniel Stavis</h3><p class="role">Advisor</p></div>
+        <div class="officer-groups officer-groups-lead reveal">
+          <div class="officer-group officer-lead">
+            <h2 class="officer-group-title">Presidents</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">ZA</div>
+                <h3>Ziya Ahmad</h3>
+                <p class="role">President</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+              <div class="card officer">
+                <div class="avatar">NK</div>
+                <h3>Netra Khot</h3>
+                <p class="role">President</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cta-band on-navy">
-      <div class="container">
-        <div>
-          <h2>Questions for the officers?</h2>
-          <p>Email the club or reach either team directly.</p>
+        <div class="officer-groups reveal">
+          <div class="officer-group">
+            <h2 class="officer-group-title">Vice President</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">PB</div>
+                <h3>Pranav Burra</h3>
+                <p class="role">Vice President</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Secretary</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">AK</div>
+                <h3>Ayana Kadkol</h3>
+                <p class="role">Secretary</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Treasurer</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">WD</div>
+                <h3>Walker Deng</h3>
+                <p class="role">Treasurer</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Public Relations</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">CL</div>
+                <h3>Claire Li</h3>
+                <p class="role">Public Relations</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Science Olympiad Captains</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">JY</div>
+                <h3>Jayden Yip</h3>
+                <p class="role">Science Olympiad Captain</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+              <div class="card officer">
+                <div class="avatar">PJ</div>
+                <h3>Prisha Jain</h3>
+                <p class="role">Science Olympiad Captain</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Research Competition Officers</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">PG</div>
+                <h3>Pari Gupta</h3>
+                <p class="role">Research Competition Officer</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+              <div class="card officer">
+                <div class="avatar">RV</div>
+                <h3>Rohan Vellamcheti</h3>
+                <p class="role">Research Competition Officer</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Science Bowl Captain</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">RL</div>
+                <h3>Rosa Lee</h3>
+                <p class="role">Science Bowl Captain</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
+          <div class="officer-group">
+            <h2 class="officer-group-title">Advisor</h2>
+            <div class="officer-cards">
+              <div class="card officer">
+                <div class="avatar">DS</div>
+                <h3>Daniel Stavis</h3>
+                <p class="role">Advisor</p>
+                <p class="bio"><span class="bio-label">Field of science:</span> TBD</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <a class="btn btn-primary" href="index.html#contact">Contact us</a>
       </div>
     </section>
 
@@ -122,14 +222,13 @@
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:tinoscienceclub@gmail.com">tinoscienceclub@gmail.com</a></li>
-            <li><a href="https://www.instagram.com/tinosciencebowl" target="_blank" rel="noopener">@tinosciencebowl</a></li>
+            <li><span class="footer-label">Science Club</span><a href="mailto:tinoscienceclub@gmail.com">tinoscienceclub@gmail.com</a></li>
+            <li><span class="footer-label">Science Bowl</span><a href="mailto:tinosciencebowl@gmail.com">tinosciencebowl@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> Tino Science · Cupertino High School</span>
-        <span>Built and maintained by Tino Science officers</span>
       </div>
     </div>
   </footer>

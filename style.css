@@ -875,5 +875,44 @@ body { background: #fff; }
 .hero-visual .atom-flat { display: block; width: 100%; height: 100%; }
 
 /* Site name: "Science" is the same colour as "Tino" (navy in the menu bar, white in the footer) */
-.brand span { color: inherit; font-weight: 800; }
+.brand span { color: inherit; font-weight: inherit; }
 .footer .brand { color: #fff; }
+
+/* Homepage team rows: both rows use the same two equal columns so their edges line up */
+#teams .feature-row, #teams .feature-row.flip { grid-template-columns: 1fr 1fr; }
+#teams .logo-panel { padding: 24px 0; aspect-ratio: auto; min-height: 320px; }
+#teams .logo-panel img { max-width: 420px; }
+@media (max-width: 720px) {
+  #teams .feature-row, #teams .feature-row.flip { grid-template-columns: 1fr; }
+  #teams .logo-panel { min-height: 0; }
+}
+
+/* Homepage team descriptions: slightly thicker, larger and darker letters so they are easier to read */
+#teams .feature-text p { font-weight: 500; font-size: 1.08rem; color: var(--heading); }
+
+/* Team page: officers sorted into role groups, presidents on top and a little bigger */
+.officer-groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 20px; }
+.officer-groups-lead { margin-bottom: 48px; }
+.officer-group { max-width: 100%; }
+.officer-group-title {
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent-text); text-align: center; margin: 0 0 12px;
+}
+.officer-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.officer-cards .officer { width: 230px; max-width: 100%; }
+.officer .bio { font-size: 0.85rem; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid rgba(15, 27, 51, 0.1); }
+.officer-lead .officer { width: 290px; padding: 32px 24px; }
+.officer-lead .avatar { width: 96px; height: 96px; font-size: 1.7rem; }
+.officer-lead h3 { font-size: 1.25rem; }
+.officer-lead .role { font-size: 0.95rem; }
+.officer-lead .bio { font-size: 0.92rem; }
+
+/* Footer contact: small label above each email */
+.footer-label { display: block; font-size: 0.75rem; color: var(--on-navy-muted); }
+
+/* Team page: big round photo that fills most of the card */
+.officer-cards .officer { padding: 20px 16px; }
+.officer-cards .avatar { width: 170px; height: 170px; max-width: 100%; font-size: 2.8rem; margin-bottom: 16px; }
+.officer-lead .officer { padding: 24px 20px; }
+.officer-lead .avatar { width: 230px; height: 230px; font-size: 3.8rem; }
+.bio-label { font-weight: 600; color: var(--heading); }
