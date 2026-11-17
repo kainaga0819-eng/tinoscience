@@ -1,18 +1,16 @@
-/* ==========================================================================
-   Tino Science — site styles
-   Everything in :root is a "design token". Change a value here and it
-   updates on every page. To switch the accent from gold to teal, change
-   --accent to #1F8A8A and --accent-text to #176B6B.
-   ========================================================================== */
+/* tino science - site styles
+   everything in :root is a "design token". change a value here and it
+   updates on every page. to switch the accent from gold to teal, change
+   --accent to #1f8a8a and --accent-text to #176b6b */
 :root {
   --navy: #0F1B33;
-  --navy-2: #182847;          /* slightly lighter navy, used in gradients */
+  --navy-2: #182847;          /* slighty lighter navy, used in gradients */
   --bg: #FFFFFF;
   --surface: #FFFFFF;
   --border: #DDE1E8;
   --text: #3D4656;
   --heading: #0F1B33;
-  --accent: #C9A227;          /* gold. Alternative: teal #1F8A8A */
+  --accent: #C9A227;          /* gold. alternative: teal #1f8a8a */
   --accent-text: #8A6E12;     /* darker gold for small text on light backgrounds */
   --accent-soft: rgba(201, 162, 39, 0.14);
   --on-navy-muted: #B6BFD1;   /* body text on navy */
@@ -26,7 +24,7 @@
 
 html { scroll-behavior: smooth; }
 
-/* Leave room for the sticky nav when a menu link scrolls to a section */
+/* leave room for the sticky nav when a menu link scrolls to a section */
 section[id] { scroll-margin-top: 72px; }
 
 body {
@@ -66,10 +64,10 @@ li { margin-bottom: 0.4em; }
 .section + .section { padding-top: 0; }
 .section-head { max-width: 640px; margin-bottom: 36px; }
 .section-head p { font-size: 1.05rem; }
-/* Contact intro is one sentence, so let it run wider and stay on one line */
+/* contact intro is one sentence, so let it run wider and stay on one line */
 #contact .section-head { max-width: none; }
 
-/* Small uppercase label above headings */
+/* small uppercase label above headings */
 .eyebrow {
   display: block;
   font-family: var(--font-body);
@@ -82,7 +80,7 @@ li { margin-bottom: 0.4em; }
 }
 .on-navy .eyebrow { color: var(--accent); }
 
-/* Skip link for keyboard users */
+/* skip link for keyboard users */
 .skip-link {
   position: absolute; left: -999px; top: 8px;
   background: var(--accent); color: var(--navy);
@@ -90,9 +88,7 @@ li { margin-bottom: 0.4em; }
 }
 .skip-link:focus { left: 8px; }
 
-/* --------------------------------------------------------------------------
-   Navigation
-   -------------------------------------------------------------------------- */
+/* navigation */
 .nav {
   background: var(--navy);
   position: sticky;
@@ -161,9 +157,7 @@ li { margin-bottom: 0.4em; }
 }
 .nav-toggle svg { display: block; }
 
-/* --------------------------------------------------------------------------
-   Buttons
-   -------------------------------------------------------------------------- */
+/* buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -194,9 +188,7 @@ li { margin-bottom: 0.4em; }
 }
 .text-link:hover { color: var(--accent-text); }
 
-/* --------------------------------------------------------------------------
-   Hero (homepage)
-   -------------------------------------------------------------------------- */
+/* hero (homepage) */
 .on-navy { background: var(--navy); color: var(--on-navy-muted); }
 .on-navy h1, .on-navy h2, .on-navy h3 { color: #fff; }
 .on-navy a { color: #fff; }
@@ -233,7 +225,7 @@ li { margin-bottom: 0.4em; }
 .icon-links a:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent); color: var(--accent); }
 .icon-links svg { width: 20px; height: 20px; }
 
-/* 3D element container. On phones this is hidden (see media queries). */
+/* 3d element container. on phones this is hidden (see media queries) */
 .hero-visual {
   position: relative;
   width: 100%;
@@ -254,7 +246,7 @@ li { margin-bottom: 0.4em; }
 }
 .hero-visual.is-fallback .hint { display: none; }
 
-/* Stats row, sits at the bottom of the hero */
+/* stats row, sits at the bottom of the hero */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -272,9 +264,7 @@ li { margin-bottom: 0.4em; }
 }
 .stat-label { font-size: 0.9rem; color: var(--on-navy-muted); }
 
-/* --------------------------------------------------------------------------
-   Page hero (sub-pages)
-   -------------------------------------------------------------------------- */
+/* page hero (sub-pages) */
 .page-hero {
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
   padding: 64px 0 56px;
@@ -283,9 +273,7 @@ li { margin-bottom: 0.4em; }
 .page-hero .lead { font-size: 1.1rem; max-width: 640px; margin: 16px 0 0; }
 .page-hero .hero-actions { margin-top: 28px; }
 
-/* --------------------------------------------------------------------------
-   Cards and grids
-   -------------------------------------------------------------------------- */
+/* cards and grids */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -299,14 +287,14 @@ li { margin-bottom: 0.4em; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
-/* Team cards on the homepage */
+/* team cards on the homepage */
 .team-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .team-card .media { aspect-ratio: 16 / 10; }
 .team-card .card-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
 .team-card .card-body p { flex: 1; }
 .team-card h3 { font-size: 1.5rem; }
 
-/* Image box. If the image file is missing, a placeholder shows instead. */
+/* image box. if the image file is missing, a placeholder shows insted */
 .media {
   position: relative;
   background: linear-gradient(135deg, #1a2a4d, #0F1B33);
@@ -339,7 +327,7 @@ figure.media figcaption {
 }
 .photo-16x9 { aspect-ratio: 16 / 9; }
 
-/* Feature list cards (e.g. "Why join") */
+/* feature list cards (like "why join") */
 .feature { display: flex; gap: 16px; align-items: flex-start; }
 .feature .num {
   flex: 0 0 40px; height: 40px;
@@ -352,7 +340,7 @@ figure.media figcaption {
 .feature h3 { font-size: 1.05rem; margin-bottom: 4px; }
 .feature p { font-size: 0.95rem; margin: 0; }
 
-/* Upcoming competitions */
+/* upcoming competitions */
 .event { display: flex; flex-direction: column; gap: 10px; }
 .event .when {
   font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; color: var(--accent-text);
@@ -368,7 +356,7 @@ figure.media figcaption {
 }
 .pill.navy { background: var(--navy); color: #fff; }
 
-/* Competition table */
+/* competition table */
 .table-wrap { overflow-x: auto; }
 table.schedule {
   width: 100%;
@@ -389,7 +377,7 @@ table.schedule th {
 table.schedule tr:last-child td { border-bottom: 0; }
 table.schedule td:first-child { font-weight: 600; color: var(--heading); white-space: nowrap; }
 
-/* Officers */
+/* officers */
 .officer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 20px; }
 .officer { text-align: center; padding: 24px 16px; }
 .avatar {
@@ -406,7 +394,7 @@ table.schedule td:first-child { font-weight: 600; color: var(--heading); white-s
 .officer h3 { font-size: 1rem; margin-bottom: 2px; }
 .officer .role { font-size: 0.85rem; margin: 0; }
 
-/* Contact */
+/* contact */
 .contact-list { list-style: none; padding: 0; margin: 0; }
 .contact-list li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
 .contact-list svg { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 3px; color: var(--accent-text); }
@@ -414,12 +402,12 @@ table.schedule td:first-child { font-weight: 600; color: var(--heading); white-s
 .contact-list a:hover { text-decoration: underline; }
 .contact-list .label { display: block; font-size: 0.8rem; color: var(--text); }
 
-/* Long-form text blocks on team pages */
+/* long-form text blocks on team pages */
 .prose { max-width: 720px; }
 .prose p { font-size: 1.05rem; }
 .prose h2 { margin-top: 0; }
 
-/* Callout box */
+/* callout box */
 .callout {
   border-left: 4px solid var(--accent);
   background: var(--surface);
@@ -428,7 +416,7 @@ table.schedule td:first-child { font-weight: 600; color: var(--heading); white-s
 }
 .callout p:last-child { margin-bottom: 0; }
 
-/* Timeline on the join page */
+/* timeline on the join page */
 .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
 .timeline li { display: grid; grid-template-columns: 24px 1fr; gap: 16px; padding-bottom: 28px; position: relative; }
 .timeline li::before {
@@ -444,7 +432,7 @@ table.schedule td:first-child { font-weight: 600; color: var(--heading); white-s
 .timeline p { margin: 0; font-size: 0.95rem; }
 .timeline .when { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); }
 
-/* FAQ */
+/* faq */
 details.faq { border-bottom: 1px solid var(--border); padding: 18px 0; }
 details.faq summary {
   cursor: pointer; font-weight: 700; color: var(--heading); font-family: var(--font-head); font-size: 1.05rem;
@@ -455,15 +443,13 @@ details.faq summary::after { content: "+"; color: var(--accent-text); font-size:
 details.faq[open] summary::after { content: "–"; }
 details.faq p { margin: 12px 0 0; }
 
-/* CTA band */
+/* cta band */
 .cta-band { padding: 64px 0; }
 .cta-band .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .cta-band h2 { margin: 0 0 8px; }
 .cta-band p { margin: 0; max-width: 520px; }
 
-/* --------------------------------------------------------------------------
-   Footer
-   -------------------------------------------------------------------------- */
+/* footer */
 .footer { background: var(--navy); color: var(--on-navy-muted); padding: 48px 0 28px; font-size: 0.9rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
 .footer h4 { color: #fff; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
@@ -480,9 +466,7 @@ details.faq p { margin: 12px 0 0; }
   color: rgba(255, 255, 255, 0.45);
 }
 
-/* --------------------------------------------------------------------------
-   Responsive
-   -------------------------------------------------------------------------- */
+/* responsive */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; }
   .hero-visual { max-width: 380px; }
@@ -505,7 +489,7 @@ details.faq p { margin: 12px 0 0; }
   .nav-links a { padding: 12px; }
   .nav-links .nav-cta a { margin: 8px 0 0; text-align: center; }
 
-  /* The 3D element is hidden on phones to keep the page light and fast. */
+  /* the 3d element is hidden on phones to keep the page light and fast */
   .hero-visual { display: none; }
   .hero-grid { padding: 48px 0 40px; }
   .stats { grid-template-columns: repeat(2, 1fr); padding: 28px 0 44px; }
@@ -521,9 +505,7 @@ details.faq p { margin: 12px 0 0; }
   .btn:hover { transform: none; }
 }
 
-/* --------------------------------------------------------------------------
-   Small extras
-   -------------------------------------------------------------------------- */
+/* small extras */
 .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .subject { text-align: center; padding: 20px 12px; }
 .subject .avatar { font-size: 1.1rem; width: 56px; height: 56px; margin-bottom: 10px; }
@@ -531,7 +513,7 @@ details.faq p { margin: 12px 0 0; }
 .avatar.sm { width: 40px; height: 40px; font-size: 0.85rem; margin: 0; flex: 0 0 40px; }
 .mt { margin-top: 24px; }
 
-/* Archives page: one .season block per school year, with results and a photo grid */
+/* archives page: one .season block per school year, with results and a photo grid */
 .season + .season { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
 .season-title { font-size: 1.5rem; margin-bottom: 16px; }
 .results { margin: 0 0 24px; }
@@ -542,7 +524,7 @@ details.faq p { margin: 12px 0 0; }
 @media (max-width: 960px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 720px) { .grid-5 { grid-template-columns: repeat(2, 1fr); } }
 
-/* Keep the six nav links on one line on tablets and small laptops */
+/* keep the six nav links on one line on tablets and small laptops */
 .nav-links a { white-space: nowrap; }
 @media (min-width: 721px) and (max-width: 900px) {
   .nav-links { gap: 0; }
@@ -550,10 +532,8 @@ details.faq p { margin: 12px 0 0; }
   .nav-links .nav-cta a { padding: 8px 14px; margin-left: 6px; }
 }
 
-/* --------------------------------------------------------------------------
-   Feature rows: one picture + one short description, side by side.
-   Add class "flip" to put the picture on the left.
-   -------------------------------------------------------------------------- */
+/* feature rows: one pictuer + one short discription, side by side.
+   add class "flip" to put the picture on the left */
 .feature-row {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -575,7 +555,7 @@ details.faq p { margin: 12px 0 0; }
 }
 .feature-media img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Navy number panel, used where there is no photo yet */
+/* navy number panel, used where theres no photo yet */
 .stat-panel {
   display: flex; flex-direction: column; justify-content: center;
   padding: 40px 48px;
@@ -597,9 +577,9 @@ details.faq p { margin: 12px 0 0; }
   width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
 }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-/* An empty <li class="chip-break"> forces the chips after it onto a new row */
+/* an empty <li class="chip-break"> forces the chips after it onto a new row */
 .chips li.chip-break { flex-basis: 100%; height: 0; padding: 0; margin: 0; border: 0; background: none; }
-.chips li.chip-break ~ li { margin-top: -8px; } /* keeps the row spacing the same as the gap between chips */
+.chips li.chip-break ~ li { margin-top: -8px; } /* keeps the row spacing the same as the gap bewteen chips */
 .chips li {
   margin: 0; padding: 6px 14px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-text);
@@ -610,11 +590,9 @@ details.faq p { margin: 12px 0 0; }
 .steps li::marker { font-family: var(--font-head); font-weight: 700; color: var(--accent-text); }
 .faq-block { margin-top: 64px; }
 
-/* --------------------------------------------------------------------------
-   Scroll animations. Anything with class "reveal" fades and slides in when
-   it scrolls into view. Pictures in feature rows slide in from their side.
-   Only active when JavaScript runs (html.js) and motion is allowed.
-   -------------------------------------------------------------------------- */
+/* scroll animations. anything with class "reveal" fades and slides in when
+   it scrolls into view. pictures in feature rows slide in from thier side.
+   only active when javascript runs (html.js) and motion is allowed */
 @media (prefers-reduced-motion: no-preference) {
   .js .reveal {
     opacity: 0;
@@ -628,7 +606,7 @@ details.faq p { margin: 12px 0 0; }
   .js .reveal.is-visible,
   .js .flip .feature-media.reveal.is-visible { opacity: 1; transform: none; }
 
-  /* Gold line that draws in under each feature label */
+  /* gold line that draws in under each feature label */
   .feature-text .eyebrow::after {
     content: ""; display: block; height: 2px; margin-top: 8px;
     width: 48px; background: var(--accent);
@@ -653,21 +631,19 @@ details.faq p { margin: 12px 0 0; }
   .faq-block { margin-top: 40px; }
 }
 
-/* Stop sliding-in pictures from causing sideways scroll */
+/* stop sliding-in pictures from causing sideways scroll */
 main { overflow-x: clip; }
 
-/* Info cards on the homepage (when, where, advisor) */
+/* info cards on the homepage (when, where, advisor) */
 .info h3 { font-size: 1.5rem; margin-bottom: 6px; }
 .info p { font-size: 0.95rem; }
 
-/* ==========================================================================
-   Clean, institutional look: white pages, a slim navy top bar, a white menu
-   bar, squared buttons and plain page titles.
-   ========================================================================== */
+/* clean, institutional look: white pages, a slim navy top bar, a white menu
+   bar, squared buttons and plain page titles */
 h1, h2, h3, h4 { letter-spacing: -0.02em; }
 h1 { font-weight: 800; }
 
-/* Slim top bar with the school name and the Join button */
+/* slim top bar with teh school name and teh join button */
 .topbar { background: var(--navy); color: #fff; font-size: 0.82rem; }
 .topbar .container { display: flex; align-items: stretch; justify-content: space-between; min-height: 36px; }
 .topbar span { display: flex; align-items: center; }
@@ -676,7 +652,7 @@ h1 { font-weight: 800; }
 .topbar-links a:hover { text-decoration: underline; }
 .topbar-links .topbar-cta { background: var(--accent); color: var(--navy); font-weight: 700; }
 
-/* White menu bar */
+/* white menu bar */
 .nav { background: #fff; border-bottom: 1px solid var(--border); }
 .nav .container { min-height: 68px; }
 .brand { color: var(--navy); font-weight: 400; font-size: 1.45rem; }
@@ -686,24 +662,24 @@ h1 { font-weight: 800; }
 .nav-links a[aria-current] { color: var(--heading); font-weight: 700; border-bottom-color: var(--accent); }
 .nav-toggle { border-color: var(--border); color: var(--navy); }
 
-/* Squared buttons and tags */
+/* squared buttons and tags */
 .btn { border-radius: 4px; padding: 12px 22px; }
 .pill, .chips li { border-radius: 4px; }
 .feature-media { border-radius: 8px; box-shadow: none; }
 .card { box-shadow: 0 1px 2px rgba(15, 27, 51, 0.04); }
 
-/* Plain page title on the inner pages, with a rule underneath */
+/* plain page title on the inner pages, with a rule underneeth */
 .page-hero { background: #fff; padding: 56px 0 0; }
 .page-hero .container { padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 .page-hero h1 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 0; }
 .page-hero .lead { font-size: 1.1rem; margin-top: 14px; }
 .page-hero + .section { padding-top: 56px; }
 
-/* Links in running text: accent underline */
+/* links in running text: accent underline */
 .prose a, .section p a, .steps a, .faq a { color: var(--heading); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .text-link { text-decoration: none !important; }
 
-/* Footer: darker strip along the bottom */
+/* footer: darker strip along the bottom */
 .footer { padding-bottom: 0; }
 .footer-bottom { margin: 0 calc(50% - 50vw); padding: 18px calc(50vw - 50%); background: #0A1325; border-top: 0; }
 
@@ -714,16 +690,16 @@ h1 { font-weight: 800; }
   .page-hero { padding-top: 40px; }
 }
 
-/* Science Olympiad logo panel (homepage) and logo beside the page title */
+/* science olympiad logo panel (homepage) and logo beside the page title */
 .logo-panel { background: #F3F6FB; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; padding: 48px; }
 .logo-panel img { width: 100%; height: auto; max-width: 460px; object-fit: contain; }
 .feature-media.logo-panel:hover img { transform: none; }
 .hero-with-logo { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
-/* Both page logos sit in the same 260 x 140 box, so the two page headers
-   take up the same space. "contain" shrinks each logo to fit without stretching. */
+/* both page logos sit in the same 260 x 140 box, so the two page headers
+   take up the same space. "contain" shrinks each logo to fit without stretching */
 .hero-logo { width: 260px; height: 140px; object-fit: contain; object-position: right center; flex: 0 0 auto; }
 
-/* Board listing all 23 Science Olympiad events, grouped by category */
+/* board listing all 23 science olympiad events, grouped by catagory */
 .events-board { border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; background: #F8FAFC; }
 .events-title { font-size: 1.15rem; margin-bottom: 20px; }
 .event-group + .event-group { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border); }
@@ -743,14 +719,12 @@ h1 { font-weight: 800; }
 
 .feature-row:has(.events-board) { align-items: start; }
 
-/* Club logo next to the "Tino Science" name in the menu bar */
+/* club logo next to the "tino science" name in the menu bar */
 .nav .brand img { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); }
 
-/* --------------------------------------------------------------------------
-   Moving glow behind the atom (homepage hero).
-   Two soft gold circles are drawn with ::before and ::after, blurred, and
-   slowly drifted around by the @keyframes animations below.
-   -------------------------------------------------------------------------- */
+/* moving glow behind the atom (homepage hero).
+   two soft gold circles are drawn with ::before and ::after, blurred, and
+   slowly drifted around by the @keyframes animations below */
 .hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%); }
 .hero > .container { position: relative; z-index: 1; }   /* keep text and atom above the glow */
 .hero::before, .hero::after {
@@ -791,17 +765,15 @@ h1 { font-weight: 800; }
   .nav .brand img { width: 34px; height: 34px; }
 }
 
-/* --------------------------------------------------------------------------
-   The 23 event tiles on the Science Olympiad page.
-   One color per category. To change a color, edit the five lines below.
-   -------------------------------------------------------------------------- */
-.cat-life  { background: #2F6F68; }   /* Life, Personal & Social Science */
-.cat-earth { background: #14335C; }   /* Earth and Space Science */
-.cat-phys  { background: #B5412F; }   /* Physical Science & Chemistry */
-.cat-tech  { background: #57602F; }   /* Technology & Engineering */
-.cat-inq   { background: #5B3A6B; }   /* Inquiry & Nature of Science */
+/* the 23 event tiles on the science olympiad page.
+   one color per category. to change a color, edit the five lines below */
+.cat-life  { background: #2F6F68; }   /* life, personal & social science */
+.cat-earth { background: #14335C; }   /* earth and space science */
+.cat-phys  { background: #B5412F; }   /* physical science & chemistry */
+.cat-tech  { background: #57602F; }   /* technology & engineering */
+.cat-inq   { background: #5B3A6B; }   /* inquiry & nature of science */
 
-/* Two plain text columns at the top of the Science Olympiad and Science Bowl pages */
+/* two plain text columns at the top of the science olympiad and science bowl pages */
 .info-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 72px; }
 @media (max-width: 720px) { .info-pair { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; } }
 #scioly .event-tiles { margin-bottom: 0; }
@@ -823,24 +795,22 @@ h1 { font-weight: 800; }
 @media (max-width: 960px) { .event-tiles { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .event-tiles { grid-template-columns: 1fr; margin-bottom: 56px; } }
 
-/* Hero without the stats row: a little more room at the bottom */
+/* hero without the stats row: a litle more room at the bottom */
 .hero-grid { padding-bottom: 72px; }
 @media (max-width: 720px) { .hero-grid { padding-bottom: 48px; } }
 
-/* Clickable section titles (homepage team rows) */
+/* clickable section titles (homepage team rows) */
 .title-link { color: inherit; text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 3px no-repeat; transition: background-size 0.3s ease; padding-bottom: 2px; }
 .title-link::after { content: " \2192"; color: var(--accent-text); display: inline-block; transition: transform 0.2s ease; }
 .title-link:hover, .title-link:focus-visible { background-size: 100% 3px; }
 .title-link:hover::after { transform: translateX(4px); }
 
-/* Science Bowl logo panel: white, with the required credit line underneath */
+/* science bowl logo panel: white, with the required credit line underneath */
 .logo-panel-white { background: #fff; flex-direction: column; gap: 20px; }
 .logo-panel-white img { max-width: 380px; }
 .logo-panel figcaption { font-size: 0.75rem; line-height: 1.5; color: var(--text); text-align: center; max-width: 420px; }
 
-/* --------------------------------------------------------------------------
-   Top bar: school link, search, contact, join
-   -------------------------------------------------------------------------- */
+/* top bar: school link, search, contact, join */
 html { background: var(--navy); }          /* navy shows if the page is pulled past its top or bottom */
 body { background: #fff; }
 .topbar-school { display: flex; align-items: center; color: #fff; text-decoration: none; font-weight: 600; white-space: pre; }
@@ -879,17 +849,17 @@ body { background: #fff; }
 .topbar .topbar-address { display: inline; }
 @media (max-width: 900px) { .topbar .topbar-address { display: none; } }
 
-/* Logo panels: plain white, no box around them */
+/* logo panels: plain white, no box around them */
 .logo-panel { background: #fff; border: 0; }
 
-/* Flat atom picture in the hero */
+/* flat atom picture in the hero */
 .hero-visual .atom-flat { display: block; width: 100%; height: 100%; }
 
-/* Site name: "Science" is the same colour as "Tino" (navy in the menu bar, white in the footer) */
+/* site name: "science" is the same color as "tino" (navy in the menu bar, white in the footer) */
 .brand span { color: inherit; font-weight: inherit; }
 .footer .brand { color: #fff; }
 
-/* Homepage team rows: both rows use the same two equal columns so their edges line up */
+/* homepage team rows: both rows use the same two equal columns so their edges line up */
 #teams .feature-row, #teams .feature-row.flip { grid-template-columns: 1fr 1fr; }
 #teams .logo-panel { padding: 24px 0; aspect-ratio: auto; min-height: 320px; }
 #teams .logo-panel img { max-width: 420px; }
@@ -898,11 +868,11 @@ body { background: #fff; }
   #teams .logo-panel { min-height: 0; }
 }
 
-/* Homepage team descriptions: normal weight, slightly larger letters.
-   To make them bolder again, change font-weight to 500. */
+/* homepage team descriptions: normal weight, slightly larger letters.
+   to make them bolder again, change font-weight to 500 */
 #teams .feature-text p { font-weight: 400; font-size: 1.08rem; }
 
-/* Team page: officers sorted into role groups, presidents on top and a little bigger */
+/* team page: officers sorted into role groups, presidents on top and a little bigger */
 .officer-groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 20px; }
 .officer-groups-lead { margin-bottom: 48px; }
 .officer-group { max-width: 100%; }
@@ -919,24 +889,24 @@ body { background: #fff; }
 .officer-lead .role { font-size: 0.95rem; }
 .officer-lead .bio { font-size: 0.92rem; }
 
-/* Footer contact: small label above each email */
+/* footer contact: small label above each email */
 .footer-label { display: block; font-size: 0.75rem; color: var(--on-navy-muted); }
 
-/* Team page: big round photo that fills most of the card */
+/* team page: big round photo that fills most of the card */
 .officer-cards .officer { padding: 20px 16px; }
 .officer-cards .avatar { width: 170px; height: 170px; max-width: 100%; font-size: 2.8rem; margin-bottom: 16px; }
 .officer-lead .officer { padding: 24px 20px; }
 .officer-lead .avatar { width: 230px; height: 230px; font-size: 3.8rem; }
 .bio-label { font-weight: 600; color: var(--heading); }
 
-/* Homepage hero: meeting day, room and advisor in a row under the headline */
+/* homepage hero: meeting day, room and advisor in a row under the headline */
 .hero-facts { display: flex; flex-wrap: wrap; gap: 20px 40px; margin: 28px 0 32px; }
 .hero-facts div { padding-left: 16px; border-left: 3px solid var(--accent); }
 .hero-facts dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 .hero-facts dd { margin: 0; font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: #fff; }
 
-/* Homepage hero fills the whole screen under the two top bars (about 105px tall together),
-   with its contents centred top-to-bottom. Only on laptop/desktop widths. */
+/* homepage hero fills the whole screen under the two top bars (about 105px tall together),
+   with its contents centered top-to-bottom. only on laptop/desktop widths */
 @media (min-width: 961px) {
   .hero-grid { box-sizing: border-box; min-height: calc(100vh - 105px); min-height: calc(100svh - 105px); }
 }
