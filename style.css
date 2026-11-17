@@ -66,6 +66,8 @@ li { margin-bottom: 0.4em; }
 .section + .section { padding-top: 0; }
 .section-head { max-width: 640px; margin-bottom: 36px; }
 .section-head p { font-size: 1.05rem; }
+/* Contact intro is one sentence, so let it run wider and stay on one line */
+#contact .section-head { max-width: none; }
 
 /* Small uppercase label above headings */
 .eyebrow {
@@ -595,6 +597,9 @@ details.faq p { margin: 12px 0 0; }
   width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
 }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+/* An empty <li class="chip-break"> forces the chips after it onto a new row */
+.chips li.chip-break { flex-basis: 100%; height: 0; padding: 0; margin: 0; border: 0; background: none; }
+.chips li.chip-break ~ li { margin-top: -8px; } /* keeps the row spacing the same as the gap between chips */
 .chips li {
   margin: 0; padding: 6px 14px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-text);
@@ -714,7 +719,9 @@ h1 { font-weight: 800; }
 .logo-panel img { width: 100%; height: auto; max-width: 460px; object-fit: contain; }
 .feature-media.logo-panel:hover img { transform: none; }
 .hero-with-logo { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
-.hero-logo { width: 260px; height: auto; flex: 0 0 auto; }
+/* Both page logos sit in the same 260 x 140 box, so the two page headers
+   take up the same space. "contain" shrinks each logo to fit without stretching. */
+.hero-logo { width: 260px; height: 140px; object-fit: contain; object-position: right center; flex: 0 0 auto; }
 
 /* Board listing all 23 Science Olympiad events, grouped by category */
 .events-board { border: 1px solid var(--border); border-radius: 8px; padding: 28px 32px; background: #F8FAFC; }
@@ -728,7 +735,7 @@ h1 { font-weight: 800; }
 }
 @media (max-width: 720px) {
   .hero-with-logo { flex-direction: column-reverse; align-items: flex-start; gap: 24px; }
-  .hero-logo { width: 180px; }
+  .hero-logo { width: 180px; height: 97px; object-position: left center; }
   .logo-panel { padding: 28px; }
   .events-board { padding: 20px; }
   .js .events-board.reveal { transform: translateY(28px); }
@@ -794,6 +801,10 @@ h1 { font-weight: 800; }
 .cat-tech  { background: #57602F; }   /* Technology & Engineering */
 .cat-inq   { background: #5B3A6B; }   /* Inquiry & Nature of Science */
 
+/* Two plain text columns at the top of the Science Olympiad and Science Bowl pages */
+.info-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 72px; }
+@media (max-width: 720px) { .info-pair { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; } }
+#scioly .event-tiles { margin-bottom: 0; }
 .events-intro { margin-bottom: 36px; }
 .event-tiles {
   list-style: none; padding: 0; margin: 0 0 88px;
@@ -887,8 +898,9 @@ body { background: #fff; }
   #teams .logo-panel { min-height: 0; }
 }
 
-/* Homepage team descriptions: slightly thicker, larger and darker letters so they are easier to read */
-#teams .feature-text p { font-weight: 500; font-size: 1.08rem; color: var(--heading); }
+/* Homepage team descriptions: normal weight, slightly larger letters.
+   To make them bolder again, change font-weight to 500. */
+#teams .feature-text p { font-weight: 400; font-size: 1.08rem; }
 
 /* Team page: officers sorted into role groups, presidents on top and a little bigger */
 .officer-groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 36px 20px; }
@@ -916,3 +928,15 @@ body { background: #fff; }
 .officer-lead .officer { padding: 24px 20px; }
 .officer-lead .avatar { width: 230px; height: 230px; font-size: 3.8rem; }
 .bio-label { font-weight: 600; color: var(--heading); }
+
+/* Homepage hero: meeting day, room and advisor in a row under the headline */
+.hero-facts { display: flex; flex-wrap: wrap; gap: 20px 40px; margin: 28px 0 32px; }
+.hero-facts div { padding-left: 16px; border-left: 3px solid var(--accent); }
+.hero-facts dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.hero-facts dd { margin: 0; font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: #fff; }
+
+/* Homepage hero fills the whole screen under the two top bars (about 105px tall together),
+   with its contents centred top-to-bottom. Only on laptop/desktop widths. */
+@media (min-width: 961px) {
+  .hero-grid { box-sizing: border-box; min-height: calc(100vh - 105px); min-height: calc(100svh - 105px); }
+}
