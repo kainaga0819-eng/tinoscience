@@ -663,7 +663,7 @@ h1 { font-weight: 800; }
 /* white menu bar */
 .nav { background: #fff; border-bottom: 1px solid var(--border); }
 .nav .container { min-height: 68px; }
-.brand { color: var(--navy); font-weight: 400; font-size: 1.45rem; }
+.brand { color: var(--navy); font-weight: 600; font-size: 1.45rem; }   /* font-weight: 400 is thin, 600 is semi bold, 700 is bold */
 .nav-links { gap: 8px; }
 .nav-links a { color: var(--heading); border-radius: 0; padding: 8px 10px; border-bottom: 3px solid transparent; }
 .nav-links a:hover { color: var(--heading); background: none; border-bottom-color: var(--border); }
