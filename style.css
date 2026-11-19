@@ -554,6 +554,14 @@ details.faq p { margin: 12px 0 0; }
   box-shadow: 0 24px 48px -24px rgba(15, 27, 51, 0.45);
 }
 .feature-media img { width: 100%; height: 100%; object-fit: cover; }
+/* small light label in the bottom corner of a picture, e.g. "2025–26 team" */
+.feature-media.has-tag { position: relative; }
+.photo-tag {
+  position: absolute; right: 12px; bottom: 10px; z-index: 1;
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
 
 /* navy number panel, used where theres no photo yet */
 .stat-panel {
@@ -776,24 +784,36 @@ h1 { font-weight: 800; }
 /* two plain text columns at the top of the science olympiad and science bowl pages */
 .info-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-bottom: 72px; }
 @media (max-width: 720px) { .info-pair { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; } }
+/* the summer bootcamp note on the scioly page: same gap below it as above it */
+#scioly .callout { margin-bottom: 72px; }
+@media (max-width: 720px) { #scioly .callout { margin-bottom: 56px; } }
 #scioly .event-tiles { margin-bottom: 0; }
 .events-intro { margin-bottom: 36px; }
 .event-tiles {
   list-style: none; padding: 0; margin: 0 0 88px;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  /* three tiles per row. grid-auto-rows: 1fr makes every row the same height,
+     so all the tiles are the same size */
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 4px;
 }
-.event-tile { margin: 0; padding: 28px 24px 24px; color: #fff; display: flex; flex-direction: column; }
-.event-tile h3 { color: #fff; text-align: center; font-size: 1.3rem; margin-bottom: 10px; }
-.event-about { text-align: center; font-weight: 600; font-size: 0.98rem; line-height: 1.45; margin: 0 0 18px; flex: 1; }
-.event-meta { margin: 0; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.55); font-size: 0.85rem; line-height: 1.6; color: rgba(255, 255, 255, 0.92); }
+.event-tile { margin: 0; padding: 34px 28px 28px; color: #fff; display: flex; flex-direction: column; }
+.event-tile h3 { color: #fff; text-align: center; font-size: 1.4rem; margin-bottom: 12px; }
+/* flex: 1 makes the description fill the spare space, which pushes the white
+   line and the category/format text to the same spot at the bottom of every tile */
+.event-about { text-align: center; font-weight: 600; font-size: 1rem; line-height: 1.45; margin: 0 0 20px; flex: 1; }
+.event-meta { margin: 0; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.55); font-size: 0.88rem; line-height: 1.6; color: rgba(255, 255, 255, 0.92); }
 @media (prefers-reduced-motion: no-preference) {
   .js .event-tile.reveal { transition-duration: 0.5s; }
-  .js .event-tile.reveal:nth-child(4n+2) { transition-delay: 0.07s; }
-  .js .event-tile.reveal:nth-child(4n+3) { transition-delay: 0.14s; }
-  .js .event-tile.reveal:nth-child(4n) { transition-delay: 0.21s; }
+  .js .event-tile.reveal:nth-child(3n+2) { transition-delay: 0.07s; }
+  .js .event-tile.reveal:nth-child(3n) { transition-delay: 0.14s; }
 }
-@media (max-width: 960px) { .event-tiles { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .event-tiles { grid-template-columns: 1fr; margin-bottom: 56px; } }
+@media (max-width: 1079px) { .event-tiles { grid-template-columns: repeat(2, 1fr); } }
+/* on narrow two-column screens a long category can wrap onto a second line,
+   so keep room for it in every tile and the white lines stay level */
+@media (max-width: 760px) { .event-meta { min-height: calc(14px + 4.8em); } }
+@media (max-width: 520px) {
+  .event-tiles { grid-template-columns: 1fr; grid-auto-rows: auto; margin-bottom: 56px; }
+  .event-meta { min-height: 0; }
+}
 
 /* hero without the stats row: a litle more room at the bottom */
 .hero-grid { padding-bottom: 72px; }
